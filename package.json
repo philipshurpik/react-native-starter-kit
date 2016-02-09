@@ -1,6 +1,16 @@
 {
   "name": "react-native-starter-kit",
+  "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
   "version": "0.0.1",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "react",
+    "redux",
+    "starter",
+    "boilerplate"
+  ],
   "scripts": {
     "start": "react-native start"
   },
