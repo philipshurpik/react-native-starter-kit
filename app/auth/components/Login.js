@@ -21,8 +21,7 @@ var styles = StyleSheet.create({
 
 class Login extends Component {
     static propTypes = {
-        identity: PropTypes.object.isRequired,
-        auth: PropTypes.object.isRequired,
+        errorStatus: PropTypes.string.isRequired,
         login: PropTypes.func.isRequired
     };
 
@@ -32,7 +31,7 @@ class Login extends Component {
     }
 
     render() {
-        const {identity, auth} = this.props;
+        const {errorStatus} = this.props;
         return (
             <View className="loader" style={styles.container}>
                 <TextInput
@@ -48,8 +47,7 @@ class Login extends Component {
                         onPress={() => this.onSubmit()}>
                     Login
                 </Button>
-                <Text>Username: {identity.username}</Text>
-                <Text>Status: {auth.errorStatus}</Text>
+                <Text>Status: {errorStatus}</Text>
             </View>
         );
     }

@@ -5,8 +5,7 @@ import Login from './components/Login';
 
 function mapStateToProps(state) {
     return {
-        identity: state.identity,
-        auth: state.auth
+        errorStatus: state.auth.errorStatus
     };
 }
 
