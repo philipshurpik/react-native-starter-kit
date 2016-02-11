@@ -1,10 +1,13 @@
 import React, {Component, StyleSheet, View, Text, TouchableOpacity, PropTypes} from 'react-native';
 import Button from 'react-native-button';
-import {container, button} from 'commonStyles';
+import {container, content, footer, button, label} from 'commonStyles';
 
 var styles = StyleSheet.create({
     container,
-    button
+    content,
+    footer,
+    button,
+    label
 });
 
 class Profile extends Component {
@@ -17,11 +20,15 @@ class Profile extends Component {
         const {identity, logout} = this.props;
         return (
             <View style={styles.container}>
-                <Text>username: {identity.username}</Text>
-                <Button style={styles.button}
-                        onPress={logout}>
-                    Logout
-                </Button>
+                <View style={styles.content}>
+                    <Text style={label}>Username: {identity.username}</Text>
+                </View>
+                <View style={[styles.footer, styles.content]}>
+                    <Button style={styles.button}
+                            onPress={logout}>
+                        Logout
+                    </Button>
+                </View>
             </View>
         )
     }
