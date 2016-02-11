@@ -1,7 +1,7 @@
 {
   "name": "react-native-starter-kit",
   "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "keywords": [
     "react-native",
     "ios",
@@ -11,6 +11,15 @@
     "starter",
     "boilerplate"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philipshurpik/react-native-starter-kit"
+  },
+  "author": {
+    "name": "Philip Shurpik",
+    "email": "philip.shurpik@gmail.com"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "react-native start"
   },
