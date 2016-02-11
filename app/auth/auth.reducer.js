@@ -1,4 +1,4 @@
-import {AUTH_LOGIN_FAIL, AUTH_LOGIN_SUCCESS} from './auth.actions';
+import {AUTH_LOGIN_FAIL, AUTH_LOGIN_SUCCESS, AUTH_LOGOUT_SUCCESS} from './auth.actions';
 
 export default function auth(state = {login: false, errorStatus: ''}, action) {
     switch (action.type) {
@@ -13,6 +13,11 @@ export default function auth(state = {login: false, errorStatus: ''}, action) {
                 ...state,
                 login: false,
                 errorStatus: action.payload.message
+            };
+        case AUTH_LOGOUT_SUCCESS:
+            return {
+                ...state,
+                login: false
             };
         default:
             return state;

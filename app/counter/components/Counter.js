@@ -1,4 +1,4 @@
-import React, {Component, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import React, {Component, StyleSheet, View, Text, TouchableOpacity, PropTypes} from 'react-native';
 import Button from 'react-native-button';
 
 var styles = StyleSheet.create({
@@ -13,8 +13,15 @@ var styles = StyleSheet.create({
 });
 
 class Counter extends Component {
+    static propTypes = {
+        counter: PropTypes.number.isRequired,
+        increment: PropTypes.func.isRequired,
+        decrement: PropTypes.func.isRequired,
+        openProfile: PropTypes.func.isRequired
+    };
+
     render() {
-        const {counter, increment, decrement} = this.props;
+        const {counter, openProfile, increment, decrement} = this.props;
         return (
             <View style={styles.container}>
                 <Button style={styles.button}
@@ -26,6 +33,10 @@ class Counter extends Component {
                     Decrease
                 </Button>
                 <Text>Counter: {counter}</Text>
+                <Button style={styles.button}
+                        onPress={openProfile}>
+                    Open User Profile
+                </Button>
             </View>
         )
     }

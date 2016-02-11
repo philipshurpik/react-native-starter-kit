@@ -15,7 +15,10 @@ export function login(username) {
 }
 
 export function logout() {
-    // TODO: implement
+    return dispatch => asyncWrapper(() => {
+        Actions.loginPage();
+        return dispatch(logoutSuccess());
+    })
 }
 
 function asyncWrapper(callback) {
@@ -24,7 +27,7 @@ function asyncWrapper(callback) {
     return setTimeout(() => {
         callback();
         Actions.dismiss();
-    }, 1000)
+    }, Math.random() * 1000)
 }
 
 function loginSuccess(username) {
@@ -44,3 +47,8 @@ function loginFail(error) {
     }
 }
 
+function logoutSuccess() {
+    return {
+        type: AUTH_LOGOUT_SUCCESS
+    }
+}
