@@ -1,10 +1,10 @@
-import {Actions} from 'react-native-router-flux';
+import {router} from 'actions';
 
 export default function navigation(state = {}, action) {
     switch (action.type) {
-        case Actions.AFTER_ROUTE:
-        case Actions.AFTER_POP:
-        case Actions.AFTER_DISMISS:
+        case router.AFTER_ROUTE:
+        case router.AFTER_POP:
+        case router.AFTER_DISMISS:
             return action.route;
         default:
             return state;

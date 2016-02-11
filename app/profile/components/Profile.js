@@ -1,15 +1,10 @@
 import React, {Component, StyleSheet, View, Text, TouchableOpacity, PropTypes} from 'react-native';
 import Button from 'react-native-button';
+import {container, button} from 'commonStyles';
 
 var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        top: 80
-    },
-    button: {
-        fontSize: 20,
-        color: 'green'
-    }
+    container,
+    button
 });
 
 class Profile extends Component {

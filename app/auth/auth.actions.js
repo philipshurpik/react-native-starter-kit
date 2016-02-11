@@ -1,4 +1,4 @@
-import {Actions} from 'react-native-router-flux';
+import {router} from 'actions';
 
 export const AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS';
 export const AUTH_LOGIN_FAIL = 'AUTH_LOGIN_FAIL';
@@ -7,7 +7,7 @@ export const AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
 export function login(username) {
     return dispatch => asyncWrapper(() => {
         if (username.length) {
-            Actions.counterPage();
+            router.counterPage();
             return dispatch(loginSuccess(username));
         }
         return dispatch(loginFail(new Error('username field is required')));
@@ -16,17 +16,17 @@ export function login(username) {
 
 export function logout() {
     return dispatch => asyncWrapper(() => {
-        Actions.loginPage();
+        router.loginPage();
         return dispatch(logoutSuccess());
     })
 }
 
 function asyncWrapper(callback) {
-    Actions.loading();
+    router.loading();
 
     return setTimeout(() => {
         callback();
-        Actions.dismiss();
+        router.dismiss();
     }, Math.random() * 1000)
 }
 

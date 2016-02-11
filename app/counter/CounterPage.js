@@ -1,18 +1,17 @@
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Counter from './components/Counter';
-import * as counterActions from './counter.actions';
-import {Actions} from 'react-native-router-flux';
+import actions from 'actions';
 
 function mapStateToProps(state) {
     return {
         counter: state.counter,
-        openProfile: Actions.profilePage
+        openProfile: actions.router.profilePage
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(counterActions, dispatch);
+    return bindActionCreators(actions.counter, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

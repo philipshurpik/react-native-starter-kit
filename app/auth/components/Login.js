@@ -1,22 +1,11 @@
 import React, {Component, StyleSheet, View, Text, TextInput, PropTypes} from 'react-native';
 import Button from 'react-native-button';
+import {container, input, button} from 'commonStyles';
 
 var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        top: 44,
-        padding: 20
-    },
-    input: {
-        height: 40,
-        padding: 10
-    },
-    button: {
-        padding: 10,
-        fontSize: 20,
-        backgroundColor: 'orange',
-        color: 'white'
-    }
+    container,
+    input,
+    button
 });
 
 class Login extends Component {
