@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import auth from './auth/auth.reducer';
 import counter from './counter/counter.reducer';
 import identity from './auth/identity.reducer';
-import loader from './loader/loader.reducer';
+import navigation from './navigation/navigation.reducer';
 
 export default rootReducer = combineReducers({
     auth,
     counter,
     identity,
-    loader
+    navigation
 });

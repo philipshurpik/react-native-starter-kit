@@ -4,7 +4,7 @@ import Button from 'react-native-button';
 var styles = StyleSheet.create({
     container: {
         flex: 1,
-        top: 44
+        top: 80
     },
     button: {
         fontSize: 20,

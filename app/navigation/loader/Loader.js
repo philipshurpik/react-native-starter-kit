@@ -2,8 +2,14 @@ import React, {Component, View, Text, StyleSheet, PropTypes} from 'react-native'
 
 var styles = StyleSheet.create({
     container: {
-        flex: 1,
-        top: 100
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: 'rgba(150,150,150,0.2)',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     text: {
         padding: 10,
@@ -13,18 +19,14 @@ var styles = StyleSheet.create({
     }
 });
 
-const LoaderSpinner = ({loading}) => {
+const Loader = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                {loading ? 'Loading...' : ''}
+                {'Loading...'}
             </Text>
         </View>
     )
 };
 
-LoaderSpinner.propTypes = {
-    loading: PropTypes.bool.isRequired
-};
-
-export default LoaderSpinner;
+export default Loader;

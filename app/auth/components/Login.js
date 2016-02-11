@@ -34,7 +34,7 @@ class Login extends Component {
     render() {
         const {identity, auth} = this.props;
         return (
-            <View style={styles.container}>
+            <View className="loader" style={styles.container}>
                 <TextInput
                     style={styles.input}
                     value={this.state.username}
