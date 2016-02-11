@@ -30,6 +30,7 @@
     "react-native-router-flux": "^2.2.2",
     "react-redux": "^4.4.0",
     "redux": "^3.2.1",
-    "redux-logger": "^2.5.0"
+    "redux-logger": "^2.5.0",
+    "fbjs": "^0.6.1"
   }
 }
