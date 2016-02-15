@@ -2,7 +2,7 @@ import React, {Navigator} from 'react-native'
 import {Router, Route, Schema, Animations, Actions, TabBar} from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
-import CounterPage from './counter/CounterPage';
+import HomePage from './home/HomePage';
 import LoginPage from './auth/LoginPage';
 import ProfilePage from './profile/ProfilePage';
 import Loader from './navigation/loader/Loader';
@@ -18,7 +18,7 @@ const Routes = ({loading, needSignIn}) => (
 
             <Route name="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
 
-            <Route name="counterPage" initial={!needSignIn} component={CounterPage} title="Counter" type="replace"/>
+            <Route name="homePage" initial={!needSignIn} component={HomePage} title="Home" type="replace"/>
             <Route name="profilePage" component={ProfilePage} title="Profile"/>
 
             <Route name="loading" type="modal" component={Loader}/>

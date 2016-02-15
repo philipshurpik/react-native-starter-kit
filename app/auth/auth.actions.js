@@ -7,7 +7,7 @@ export const AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
 export function login(username) {
     return dispatch => asyncWrapper(() => {
         if (username.length) {
-            router.counterPage();
+            router.homePage();
             return dispatch(loginSuccess(username));
         }
         return dispatch(loginFail(new Error('username field is required')));
