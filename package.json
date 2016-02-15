@@ -1,7 +1,7 @@
 {
   "name": "react-native-starter-kit",
   "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "react-native",
     "ios",
@@ -9,7 +9,11 @@
     "react",
     "redux",
     "starter",
-    "boilerplate"
+    "boilerplate",
+    "offline-first",
+    "offline",
+    "persist",
+    "asyncstorage"
   ],
   "repository": {
     "type": "git",
