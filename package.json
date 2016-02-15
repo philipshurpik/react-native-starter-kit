@@ -1,7 +1,7 @@
 {
   "name": "react-native-starter-kit",
   "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [
     "react-native",
     "ios",
