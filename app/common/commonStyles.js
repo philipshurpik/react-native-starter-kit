@@ -1,7 +1,3 @@
-/**
- * @providesModule commonStyles
- */
-
 var HEADER_HEIGHT = 64;
 
 module.exports = {

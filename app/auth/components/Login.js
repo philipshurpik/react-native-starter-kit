@@ -2,13 +2,12 @@ import React, {Component, PropTypes} from 'react';
 import {StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
 import Button from 'app/common/Button';
 import Loader from 'app/common/Loader';
-import {container, content, input, button, errorText} from 'commonStyles';
+import {container, content, input, errorText} from 'app/common/commonStyles';
 
 var styles = StyleSheet.create({
     container,
     content,
     input,
-    button,
     errorText
 });
 
