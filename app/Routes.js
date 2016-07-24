@@ -1,33 +1,28 @@
-import React, {Navigator} from 'react-native'
-import {Router, Route, Schema, Animations, Actions, TabBar} from 'react-native-router-flux';
+import React, {Component} from 'react'
+import {Scene, Reducer, Router, Actions as routes} from 'react-native-router-flux'
 import { connect } from 'react-redux';
 
 import HomePage from './home/HomePage';
 import LoginPage from './auth/LoginPage';
 import ProfilePage from './profile/ProfilePage';
-import Loader from './navigation/loader/Loader';
+import Loader from './common/Loader';
 
-const AppRouter = connect()(Router);
+const reducerCreate = params => (state, action) => Reducer(params)(state, action);
 
 const Routes = ({loading, needSignIn}) => (
     loading ?
         <Loader/> :
-        <AppRouter>
-            <Schema name="modal" sceneConfig={Navigator.SceneConfigs.FloatFromBottom}/>
-            <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
+        <Router createReducer={reducerCreate}>
+            <Scene key="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
 
-            <Route name="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
-
-            <Route name="homePage" initial={!needSignIn} component={HomePage} title="Home" type="replace"/>
-            <Route name="profilePage" component={ProfilePage} title="Profile"/>
-
-            <Route name="loading" type="modal" component={Loader}/>
-        </AppRouter>
+            <Scene key="homePage" initial={!needSignIn} component={HomePage} title="Home" type="replace"/>
+            <Scene key="profilePage" component={ProfilePage} title="Profile"/>
+        </Router>
 );
 
 function mapStateToProps(state) {
     return {
-        loading: !state.navigation.storageLoaded,
+        loading: !state.storage.storageLoaded,
         needSignIn: !state.auth.token
     }
 }

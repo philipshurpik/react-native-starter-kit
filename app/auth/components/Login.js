@@ -1,5 +1,6 @@
-import React, {Component, StyleSheet, View, Text, TextInput, PropTypes} from 'react-native';
-import Button from 'react-native-button';
+import React, {Component, PropTypes} from 'react';
+import {StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import Button from 'app/common/Button';
 import {container, content, input, button, errorText} from 'commonStyles';
 
 var styles = StyleSheet.create({
@@ -34,8 +35,7 @@ class Login extends Component {
                     onSubmitEditing={() => this.onSubmit()}
                     onChangeText={(username) => this.setState({username: username})}
                 />
-                <Button style={styles.button}
-                        onPress={() => this.onSubmit()}>
+                <Button onPress={() => this.onSubmit()}>
                     Login
                 </Button>
                 {errorStatus ? <Text style={styles.errorText}>{errorStatus}</Text> : <Text/>}

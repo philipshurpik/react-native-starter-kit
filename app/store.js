@@ -1,14 +1,31 @@
-import { persistStore, autoRehydrate } from 'redux-persist'
-import {applyMiddleware, createStore} from 'redux';
-import { AsyncStorage } from 'react-native';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-import rootReducer from './rootReducer';
+import {persistStore, autoRehydrate} from "redux-persist";
+import {applyMiddleware, createStore, compose} from "redux";
+import {AsyncStorage} from "react-native";
+import thunk from "redux-thunk";
+import createLogger from "redux-logger";
+import rootReducer from "./rootReducer";
 
 const logger = createLogger();
-const middleware = applyMiddleware(thunk, logger);
+const persistVersion = 1;
 
-const store = autoRehydrate()(createStore)(rootReducer, middleware);
-persistStore(store, {storage: AsyncStorage});
+const store = createStore(rootReducer, compose(
+	applyMiddleware(thunk, logger),
+	autoRehydrate()
+));
+
+checkPersistVersion()
+	.then(() => persistStore(store, {storage: AsyncStorage}));
 
 export default store;
+
+
+function checkPersistVersion() {
+	return AsyncStorage.getItem('persistVersion')
+		.then(deviceVersion => {
+			if (persistVersion > Number(deviceVersion)) {
+				return AsyncStorage.getAllKeys()
+					.then(keys => keys.filter(item => item != "reduxPersist:auth"))
+					.then(keys => AsyncStorage.multiRemove(keys));
+			}
+		});
+}

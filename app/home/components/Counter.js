@@ -1,5 +1,6 @@
-import React, {Component, StyleSheet, View, Text, TouchableOpacity, PropTypes} from 'react-native';
-import Button from 'react-native-button';
+import React, {Component, PropTypes} from 'react';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import Button from 'app/common/Button';
 import {container, content, button, label, footer} from 'commonStyles';
 
 var styles = StyleSheet.create({
@@ -23,12 +24,10 @@ class Counter extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
-                    <Button style={styles.button}
-                            onPress={increment}>
+                    <Button onPress={increment}>
                         Increase
                     </Button>
-                    <Button style={styles.button}
-                            onPress={decrement}>
+                    <Button onPress={decrement}>
                         Decrease
                     </Button>
                     <Text style={label}>Counter: {counter}</Text>
@@ -36,8 +35,7 @@ class Counter extends Component {
 
 
                 <View style={[styles.footer, styles.content]}>
-                    <Button style={styles.button}
-                            onPress={openProfile}>
+                    <Button onPress={openProfile}>
                         Open User Profile
                     </Button>
                 </View>

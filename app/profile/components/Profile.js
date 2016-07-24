@@ -1,5 +1,6 @@
-import React, {Component, StyleSheet, View, Text, TouchableOpacity, PropTypes} from 'react-native';
-import Button from 'react-native-button';
+import React, {Component, PropTypes} from 'react';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import Button from 'app/common/Button';
 import {container, content, footer, button, label} from 'commonStyles';
 
 var styles = StyleSheet.create({
@@ -24,8 +25,7 @@ class Profile extends Component {
                     <Text style={label}>Username: {identity.username}</Text>
                 </View>
                 <View style={[styles.footer, styles.content]}>
-                    <Button style={styles.button}
-                            onPress={logout}>
+                    <Button onPress={logout}>
                         Logout
                     </Button>
                 </View>

@@ -28,13 +28,6 @@ module.exports = {
         borderWidth: 1,
         borderStyle: 'solid'
     },
-    button: {
-        marginBottom: 10,
-        padding: 10,
-        fontSize: 20,
-        backgroundColor: 'orange',
-        color: 'white'
-    },
     label: {
         color: 'orange',
         padding: 5,

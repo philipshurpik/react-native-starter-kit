@@ -1,4 +1,5 @@
-import React, {Component, View, Text, StyleSheet, PropTypes} from 'react-native'
+import React, {Component, PropTypes} from 'react'
+import {View, Text, StyleSheet} from 'react-native'
 
 var styles = StyleSheet.create({
     container: {

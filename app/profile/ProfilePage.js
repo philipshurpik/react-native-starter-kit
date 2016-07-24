@@ -2,7 +2,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import Profile from './components/Profile';
-import actions from 'actions';
+import * as authActions from 'app/auth/auth.actions';
 
 function mapStateToProps(state) {
     return {
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 }
 
 function dispatchToProps(dispatch) {
-    return bindActionCreators({logout: actions.auth.logout}, dispatch);
+    return bindActionCreators({logout: authActions.logout}, dispatch);
 }
 
 export default connect(mapStateToProps, dispatchToProps)(Profile);
