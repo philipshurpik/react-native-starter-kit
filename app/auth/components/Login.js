@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
 import Button from 'app/common/Button';
+import Loader from 'app/common/Loader';
 import {container, content, input, button, errorText} from 'commonStyles';
 
 var styles = StyleSheet.create({
@@ -23,7 +24,7 @@ class Login extends Component {
     }
 
     render() {
-        const {errorStatus} = this.props;
+        const {errorStatus, loading} = this.props;
         return (
             <View style={[styles.container, styles.content]}>
                 <TextInput
@@ -38,7 +39,8 @@ class Login extends Component {
                 <Button onPress={() => this.onSubmit()}>
                     Login
                 </Button>
-                {errorStatus ? <Text style={styles.errorText}>{errorStatus}</Text> : <Text/>}
+                {errorStatus ? <Text style={styles.errorText}>{errorStatus}</Text> : undefined}
+                {loading ? <Loader/> : undefined}
             </View>
         );
     }

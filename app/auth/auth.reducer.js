@@ -1,20 +1,27 @@
-import {AUTH_LOGIN_FAIL, AUTH_LOGIN_SUCCESS, AUTH_LOGOUT_SUCCESS} from './auth.actions';
+import * as types from './auth.actions';
 
 export default function auth(state = {token: null, errorStatus: ''}, action) {
     switch (action.type) {
-        case AUTH_LOGIN_SUCCESS:
+        case types.AUTH_LOGIN_START:
             return {
                 ...state,
-                token: action.payload.token,
+                loading: true,
                 errorStatus: ''
             };
-        case AUTH_LOGIN_FAIL:
+        case types.AUTH_LOGIN_SUCCESS:
             return {
                 ...state,
+                loading: false,
+                token: action.payload.token
+            };
+        case types.AUTH_LOGIN_FAIL:
+            return {
+                ...state,
+                loading: false,
                 token: null,
                 errorStatus: action.payload.message
             };
-        case AUTH_LOGOUT_SUCCESS:
+        case types.AUTH_LOGOUT:
             return {
                 ...state,
                 token: null

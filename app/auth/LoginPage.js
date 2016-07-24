@@ -5,6 +5,7 @@ import * as actions from './auth.actions';
 
 function mapStateToProps(state) {
     return {
+        loading: state.auth.loading,
         errorStatus: state.auth.errorStatus
     };
 }
