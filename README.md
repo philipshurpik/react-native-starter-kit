@@ -1,5 +1,5 @@
 # react-native-starter-kit
-[![Travis Build Status][travis-image]][travis-url]
+![](https://travis-ci.org/philipshurpik/react-native-starter-kit.svg?branch=master)
 
 React Native starter kit - offline-first architecture proposal for iOS/Android application  
 Functionality are grouped by modules and can be easily scaled  
