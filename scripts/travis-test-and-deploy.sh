@@ -10,7 +10,6 @@ echo name    "$NAME"
 echo message "$MESSAGE"
 echo '=================='
 
-
 if [[ $TRAVIS_BRANCH = master || $TRAVIS_BRANCH =~ ^ready\/.+ ]]; then
 	npm run eslint
 	defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool NO
@@ -19,10 +18,12 @@ if [[ $TRAVIS_BRANCH = master || $TRAVIS_BRANCH =~ ^ready\/.+ ]]; then
 	export DEVICE_NAME="iPhone 6s"
 	$(dirname $0)/./build-tests.sh > /dev/null
 	npm test
+fi
 
+if [[ $TRAVIS_BRANCH = master ]]; then
 	gem update fastlane
 	/usr/libexec/PlistBuddy -c "Set CFBundleVersion $TRAVIS_BUILD_NUMBER" ./ios/ReactNativeStarterKit/Info.plist
-	npm run deploy-staging
+	npm run deploy
 fi
 
 . scripts/merge-into-master.sh
