@@ -1,0 +1,72 @@
+{
+	"parser": "babel-eslint",
+	"plugins": ["react", "react-native"],
+	"parserOptions": {
+		"ecmaVersion": 7,
+		"sourceType": "module",
+	    "ecmaFeatures": {
+	        "jsx": true,
+			"experimentalObjectRestSpread": true
+	    }
+	},
+	"globals": {
+		"__DEV__": 1,
+		"Promise": 1,
+		"FormData": 1,
+		"fetch": 1,
+		"expect": 1,
+		"sinon": 1,
+		"appiumUtils": 1,
+		"testConfig": 1
+	},
+	"env": {
+		"node": true,
+		"es6": true,
+		"mocha": true
+	},
+	"rules": {
+		"curly": [2, "all"],
+		"eqeqeq": [2, "always", {"null": "ignore"}],
+		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"no-unused-vars": ["error", {
+			"varsIgnorePattern": "React",
+			"argsIgnorePattern": "e",
+			"vars": "all",
+			"args": "after-used"
+		}],
+		"no-undef": "error",
+		"no-trailing-spaces": 2,
+		"no-cond-assign": 1,
+		"no-constant-condition": "error",
+		"no-control-regex": 1,
+		"no-empty-character-class": 1,
+		"no-invalid-regexp": 1,
+		"no-debugger": 1,
+		"no-dupe-args": 1,
+		"no-dupe-keys": 1,
+		"no-duplicate-case": 1,
+		"no-empty": ["error", { "allowEmptyCatch": true }],
+		"no-extra-semi": 2,
+		"no-func-assign": 1,
+		"no-inner-declarations": 1,
+		"no-negated-in-lhs": 1,
+		"no-irregular-whitespace": 1,
+		"no-obj-calls": 1,
+		"no-sparse-arrays": 1,
+		"no-unexpected-multiline": 1,
+		"no-unreachable": 1,
+		"use-isnan": 1,
+		"valid-typeof": 1,
+		"space-infix-ops": "error",
+
+		"no-var": 1,
+		"arrow-spacing": 1,
+		"constructor-super": 1,
+		"no-duplicate-imports": 1,
+		"no-useless-constructor": 1,
+		"object-shorthand": 1,
+		"prefer-arrow-callback": 1,
+
+		"react/jsx-uses-vars": 1
+	}
+}

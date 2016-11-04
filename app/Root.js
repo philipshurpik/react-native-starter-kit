@@ -1,14 +1,17 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import { Provider } from 'react-redux';
+import React from "react";
+import {View} from "react-native";
+import {Provider} from "react-redux";
+import store from "./store";
+import Routes from "./Routes";
+import TestRunner from './TestRunner';
 
-import store from './store';
-import Routes from './Routes';
-
-const Root = () => (
-    <Provider store={store}>
-        <Routes />
-    </Provider>
+const Root = ({testRunner}) => (
+	<Provider store={store}>
+		<View style={{flex: 1}}>
+			{Boolean(testRunner) && <TestRunner/>}
+			<Routes />
+		</View>
+	</Provider>
 );
 
 export default Root;
