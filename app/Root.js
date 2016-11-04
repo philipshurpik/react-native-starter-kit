@@ -5,10 +5,10 @@ import store from "./store";
 import Routes from "./Routes";
 import TestRunner from './TestRunner';
 
-const Root = () => console.warn('error', process) || (
+const Root = ({testRunner}) => (
 	<Provider store={store}>
 		<View style={{flex: 1}}>
-			{global.__TEST__ && <TestRunner/>}
+			{Boolean(testRunner) && <TestRunner/>}
 			<Routes />
 		</View>
 	</Provider>
