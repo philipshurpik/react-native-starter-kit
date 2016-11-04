@@ -1,6 +1,7 @@
+import {StyleSheet} from 'react-native';
 const HEADER_HEIGHT = 64;
 
-module.exports = {
+export default StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingTop: HEADER_HEIGHT + 150
@@ -8,13 +9,6 @@ module.exports = {
 	content: {
 		flex: 1,
 		padding: 20
-	},
-	footer: {
-		position: 'absolute',
-		height: 100,
-		bottom: 0,
-		left: 0,
-		right: 0
 	},
 	input: {
 		height: 40,
@@ -37,4 +31,4 @@ module.exports = {
 		fontWeight: "700",
 		fontStyle: 'italic'
 	}
-};
+});

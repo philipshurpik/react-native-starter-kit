@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import HomePage from "./dashboard/DashboardPage";
 import LoginPage from "./auth/LoginPage";
 import ProfilePage from "./profile/ProfilePage";
-import Loader from "./common/Loader";
+import {Loader} from "./common/components";
 
 const reducerCreate = params => (state, action) => Reducer(params)(state, action);
 

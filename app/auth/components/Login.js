@@ -1,15 +1,7 @@
 import React, {Component, PropTypes} from "react";
-import {StyleSheet, View, Text, TextInput} from "react-native";
-import Button from "app/common/Button";
-import Loader from "app/common/Loader";
-import {container, content, input, errorText} from "app/common/commonStyles";
-
-const styles = StyleSheet.create({
-	container,
-	content,
-	input,
-	errorText
-});
+import {View, Text, TextInput} from "react-native";
+import {Button, Loader} from "app/common/components";
+import commonStyles from "app/common/styles";
 
 class Login extends Component {
 	static propTypes = {
@@ -25,9 +17,9 @@ class Login extends Component {
 	render() {
 		const {errorStatus, loading} = this.props;
 		return (
-			<View style={[styles.container, styles.content]}>
+			<View style={[commonStyles.container, commonStyles.content]}>
 				<TextInput
-					style={styles.input}
+					style={commonStyles.input}
 					value={this.state.username}
 					autoCorrect={false}
 					placeholder="username"
@@ -38,7 +30,7 @@ class Login extends Component {
 				<Button onPress={() => this.onSubmit()}>
 					Login
 				</Button>
-				{errorStatus ? <Text style={styles.errorText}>{errorStatus}</Text> : undefined}
+				{errorStatus ? <Text style={commonStyles.errorText}>{errorStatus}</Text> : undefined}
 				{loading ? <Loader/> : undefined}
 			</View>
 		);

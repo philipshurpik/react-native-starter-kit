@@ -1,6 +1,14 @@
 import React from "react";
 import {View, Text, StyleSheet} from "react-native";
 
+const Loader = () => (
+	<View style={styles.container}>
+		<Text style={styles.text}>
+			{'Loading...'}
+		</Text>
+	</View>
+);
+
 const styles = StyleSheet.create({
 	container: {
 		position: 'absolute',
@@ -19,15 +27,5 @@ const styles = StyleSheet.create({
 		color: 'orange'
 	}
 });
-
-const Loader = () => {
-	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>
-				{'Loading...'}
-			</Text>
-		</View>
-	)
-};
 
 export default Loader;
