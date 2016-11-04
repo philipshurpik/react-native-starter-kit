@@ -3,7 +3,7 @@ import * as actionServer from './actionServer';
 import {actions} from './testConfig';
 
 const EXECUTE_ACTION_ELEMENT_ID = 'Execute';
-const START_PAGE_ELEMENT_ID = 'Start page';
+const START_PAGE_ELEMENT_ID = 'Login';
 
 export function runApp() {
 	before(() => {
@@ -29,6 +29,11 @@ export function authorize() {
 		return callApp(actions.logout)
 			.then(() => callApp(actions.login));
 	});
+	after(logout);
+}
+
+export function unAuthorize() {
+	before(logout);
 	after(logout);
 }
 

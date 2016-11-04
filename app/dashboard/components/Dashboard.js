@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from "react";
-import { View, Text} from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import {Button, Footer} from "app/common/components";
 import commonStyles from "app/common/styles";
 
@@ -16,13 +16,18 @@ class Dashboard extends Component {
 		return (
 			<View style={commonStyles.container} testID="Dashboard">
 				<View style={commonStyles.content}>
-					<Button onPress={increment}>
+					<Button onPress={increment} testID="CounterPlus">
 						Increase
 					</Button>
 					<Button onPress={decrement}>
 						Decrease
 					</Button>
-					<Text style={commonStyles.label}>Counter: {counter}</Text>
+					<View style={styles.row}>
+						<Text style={commonStyles.label}>Counter:</Text>
+						<Text testID="CounterValue" style={commonStyles.label}>
+							{counter}
+						</Text>
+					</View>
 				</View>
 				<Footer>
 					<Button onPress={openProfile}>
@@ -33,5 +38,11 @@ class Dashboard extends Component {
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+	row: {
+		flexDirection: 'row'
+	}
+});
 
 export default Dashboard;

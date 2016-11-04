@@ -8,7 +8,7 @@ describe('dashboard', () => {
 	it('should get counter value', () => {
 		return getDriver()
 			.waitForElementByAccessibilityId('Dashboard')
-			.elementByAccessibilityId('Amount')
+			.elementByAccessibilityId('CounterValue')
 			.getValue()
 			.then(amount => expect(amount).to.equal('0'))
 	});
@@ -20,7 +20,7 @@ describe('dashboard', () => {
 			.elementByAccessibilityId('CounterPlus')
 			.click()
 
-			.elementByAccessibilityId('Amount')
+			.elementByAccessibilityId('CounterValue')
 			.getValue()
 			.then(amount => expect(amount).to.equal('1'))
 	});

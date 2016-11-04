@@ -7,7 +7,7 @@ class TestRunner extends Component {
 	async executeActions() {
 		try {
 			const {dispatch} = this.props;
-			const res = await fetch('http://127.0.0.1:5555');
+			const res = await fetch('http://localhost:5555');
 			const data = await res.json();
 
 			data.actions.forEach(dispatch);

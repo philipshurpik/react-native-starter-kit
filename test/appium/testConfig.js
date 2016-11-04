@@ -33,6 +33,6 @@ export const actions = {
 	},
 	logout: {
 		actions: [{type: 'AUTH_LOGOUT'}],
-		redirects: [{name: 'startPage', params: {duration: 0}}]
+		redirects: [{name: 'loginPage', params: {duration: 0}}]
 	}
 };

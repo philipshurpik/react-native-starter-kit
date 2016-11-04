@@ -1,9 +1,10 @@
-const {getDriver, runApp} = appiumUtils;
+const {getDriver, runApp, unAuthorize} = appiumUtils;
 const {CREDENTIALS} = testConfig;
 
 describe('integration auth', () => {
 
 	runApp();
+	unAuthorize();
 
 	it('should login', () => {
 		return getDriver()
