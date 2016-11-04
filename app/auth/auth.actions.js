@@ -5,16 +5,16 @@ export const AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS';
 export const AUTH_LOGIN_FAIL = 'AUTH_LOGIN_FAIL';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
-export const login = username => {
+export const login = (username, password) => {
 	return dispatch => {
 		dispatch(loginStart());
 
 		setTimeout(() => {
-			if (username.length) {
+			if (username.length && password.length) {
 				routes.homePage();
-				return dispatch(loginSuccess(username));
+				return dispatch(loginSuccess(username, password));
 			}
-			return dispatch(loginFail(new Error('username field is required')));
+			return dispatch(loginFail(new Error('username and password fields are required')));
 		}, Math.random() * 1000 + 500)
 	};
 };
@@ -25,12 +25,13 @@ const loginStart = () => {
 	}
 };
 
-const loginSuccess = username => {
+const loginSuccess = (username, password) => {
 	return {
 		type: AUTH_LOGIN_SUCCESS,
 		payload: {
 			token: Math.random().toString(),
-			username
+			username,
+			password
 		}
 	}
 };

@@ -3,6 +3,8 @@ import {View, Text, TextInput} from "react-native";
 import {Button, Loader} from "app/common/components";
 import commonStyles from "app/common/styles";
 
+const INITIAL_STATE = {username: '', password: ''};
+
 class Login extends Component {
 	static propTypes = {
 		errorStatus: PropTypes.string.isRequired,
@@ -11,7 +13,7 @@ class Login extends Component {
 
 	constructor() {
 		super();
-		this.state = {username: ''};
+		this.state = {...INITIAL_STATE};
 	}
 
 	render() {
@@ -26,6 +28,17 @@ class Login extends Component {
 					maxLength={140}
 					onSubmitEditing={() => this.onSubmit()}
 					onChangeText={(username) => this.setState({username})}
+					testID="loginUsername"
+				/>
+				<TextInput
+					style={commonStyles.input}
+					value={this.state.password}
+					autoCorrect={false}
+					placeholder="password"
+					secureTextEntry
+					maxLength={140}
+					onSubmitEditing={() => this.onSubmit()}
+					onChangeText={(password) => this.setState({password})}
 				/>
 				<Button onPress={() => this.onSubmit()}>
 					Login
@@ -37,8 +50,9 @@ class Login extends Component {
 	}
 
 	onSubmit() {
-		this.props.login(this.state.username);
-		this.setState({username: ''});
+		const {username, password} = this.state;
+		this.setState({...INITIAL_STATE, loading: true});
+		this.props.login(username, password);
 	}
 }
 
