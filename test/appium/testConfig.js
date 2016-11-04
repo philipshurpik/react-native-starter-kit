@@ -1,8 +1,8 @@
 export const IS_TRAVIS = process.env.TRAVIS;
-process.env.IOS_VERSION = process.env.IOS_VERSION || '10.0';
-process.env.DEVICE_NAME = process.env.DEVICE_NAME || 'iPhone 7';
+process.env.IOS_VERSION = process.env.IOS_VERSION || '9.3';
+process.env.DEVICE_NAME = process.env.DEVICE_NAME || 'iPhone 6s';
 
-const APP_NAME = 'ReactNativeCITest.app';
+const APP_NAME = 'ReactNativeStarterKit.app';
 const CONFIGURATION = IS_TRAVIS ? 'Release' : 'Debug';
 export const WEBDRIVER_CAPS = {
 	newCommandTimeout: 60,

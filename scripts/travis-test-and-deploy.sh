@@ -30,7 +30,7 @@ if [[ $TRAVIS_BRANCH = master || $TRAVIS_BRANCH = release ]]; then
   	gem uninstall bundler -v '>1.12.5' --force || echo "bundler >1.12.5 is not installed"
   	gem install bundler -v 1.12.5 --no-rdoc --no-ri --no-document --quiet
 
-	/usr/libexec/PlistBuddy -c "Set CFBundleVersion $TRAVIS_BUILD_NUMBER" ./ios/Debitoor/Info.plist
+	/usr/libexec/PlistBuddy -c "Set CFBundleVersion $TRAVIS_BUILD_NUMBER" ./ios/ReactNativeStarterKit/Info.plist
 
 	if [[ $TRAVIS_BRANCH = master ]]; then
 		npm run deploy-staging

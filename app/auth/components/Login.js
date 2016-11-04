@@ -19,7 +19,7 @@ class Login extends Component {
 	render() {
 		const {errorStatus, loading} = this.props;
 		return (
-			<View style={[commonStyles.container, commonStyles.content]}>
+			<View style={[commonStyles.container, commonStyles.content]} testID="Login">
 				<TextInput
 					style={commonStyles.input}
 					value={this.state.username}
@@ -28,7 +28,6 @@ class Login extends Component {
 					maxLength={140}
 					onSubmitEditing={() => this.onSubmit()}
 					onChangeText={(username) => this.setState({username})}
-					testID="loginUsername"
 				/>
 				<TextInput
 					style={commonStyles.input}
@@ -40,7 +39,7 @@ class Login extends Component {
 					onSubmitEditing={() => this.onSubmit()}
 					onChangeText={(password) => this.setState({password})}
 				/>
-				<Button onPress={() => this.onSubmit()}>
+				<Button onPress={() => this.onSubmit()} testID="LoginButton">
 					Login
 				</Button>
 				{errorStatus ? <Text style={commonStyles.errorText}>{errorStatus}</Text> : undefined}

@@ -14,7 +14,7 @@ class Dashboard extends Component {
 	render() {
 		const {counter, openProfile, increment, decrement} = this.props;
 		return (
-			<View style={commonStyles.container}>
+			<View style={commonStyles.container} testID="Dashboard">
 				<View style={commonStyles.content}>
 					<Button onPress={increment}>
 						Increase

@@ -12,7 +12,7 @@ class Profile extends Component {
 	render() {
 		const {identity, logout} = this.props;
 		return (
-			<View style={commonStyles.container}>
+			<View style={commonStyles.container} testID="Dashboard">
 				<View style={commonStyles.content}>
 					<Text style={commonStyles.label}>
 						Username: {identity.username}
