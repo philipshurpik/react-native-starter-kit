@@ -19,8 +19,13 @@ Example application contains three different pages, navigation between them + lo
 
 #### Unit and components tests:
 * `mocha`, `sinon`, `chai` for unit tests
+You can find tests example in `app/auth` folder for `auth.reducer`
+
 * `enzyme` and `react-native-mock` for components testing
-You can find tests example in `app/auth` folder for `auth.actions`
+See example in `app/common/components` for `Button`
+
+Note:
+Javascript files are precompiled with Babel (see `test/utils/compile.js`)
 
 #### Integration testing:
 * using `appium` for integrational testing

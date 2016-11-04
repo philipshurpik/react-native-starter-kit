@@ -1,6 +1,7 @@
 import * as types from "./auth.actions";
+export const INITIAL_STATE = {token: null, errorStatus: ''};
 
-export default function auth(state = {token: null, errorStatus: ''}, action) {
+export default function auth(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case types.AUTH_LOGIN_START:
 			return {
