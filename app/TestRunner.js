@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {StatusBar, TouchableOpacity, View, Text, StyleSheet} from 'react-native';
-import {Actions as routes} from 'react-native-router-flux';
-import {connect} from 'react-redux';
+import React, {Component} from "react";
+import {StatusBar, TouchableOpacity, Text, StyleSheet} from "react-native";
+import {Actions as routes} from "react-native-router-flux";
+import {connect} from "react-redux";
 
 class TestRunner extends Component {
 	async executeActions() {
@@ -25,25 +25,25 @@ class TestRunner extends Component {
 	}
 
 	render() {
-		return <View style={styles.container}>
-			<TouchableOpacity onPress={this.executeActions.bind(this)} testID="Execute">
-				<Text style={styles.action}>Execute</Text>
-			</TouchableOpacity>
-		</View>;
+		return <TouchableOpacity style={styles.container} onPress={this.executeActions.bind(this)} testID="Execute">
+			<Text style={styles.action}>Execute</Text>
+		</TouchableOpacity>;
 	}
 }
 
 const styles = StyleSheet.create({
 	container: {
+		position: 'absolute',
 		backgroundColor: 'red',
 		alignItems: 'center',
 		left: 0,
 		right: 0,
-		transform: [{'translate': [0, 0, 1]}]
+		zIndex: 1
 	},
 	action: {
 		marginHorizontal: 4,
-		fontSize: 10
+		paddingVertical: 2,
+		fontSize: 16
 	}
 });
 

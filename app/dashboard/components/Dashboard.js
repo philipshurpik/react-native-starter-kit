@@ -19,7 +19,7 @@ class Dashboard extends Component {
 					<Button onPress={increment} testID="CounterPlus">
 						Increase
 					</Button>
-					<Button onPress={decrement}>
+					<Button onPress={decrement} testID="CounterMinus">
 						Decrease
 					</Button>
 					<View style={styles.row}>

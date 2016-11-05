@@ -19,6 +19,10 @@ describe('dashboard', () => {
 
 			.elementByAccessibilityId('CounterPlus')
 			.click()
+			.elementByAccessibilityId('CounterPlus')
+			.click()
+			.elementByAccessibilityId('CounterMinus')
+			.click()
 
 			.elementByAccessibilityId('CounterValue')
 			.getValue()

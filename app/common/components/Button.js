@@ -13,10 +13,15 @@ const styles = StyleSheet.create({
 	button: {
 		marginBottom: 10,
 		padding: 10,
-		backgroundColor: 'orange'
+		backgroundColor: 'orange',
+		borderRadius: 24,
+		alignItems: 'center',
+		shadowOpacity: 0.2,
+		shadowRadius: 2,
+		shadowOffset:{width:2,height:4}
 	},
 	text: {
 		color: 'white',
-		fontSize: 16
+		fontSize: 18
 	}
 });
