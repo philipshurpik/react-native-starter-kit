@@ -1,7 +1,7 @@
 # react-native-starter-kit
 ![](https://travis-ci.org/philipshurpik/react-native-starter-kit.svg?branch=master)
 
-React Native starter kit - offline-first architecture proposal for iOS/Android application  
+React Native starter kit - offline-first architecture proposal for iOS/Android application. 
 Functionality are grouped by modules and can be easily scaled  
 
 Example application contains three different pages, navigation between them + loader and async tasks simulation
@@ -29,12 +29,13 @@ Javascript files are precompiled with Babel (see `test/utils/compile.js`)
 
 #### Integration testing:
 * using `appium` for integrational testing
-See Appium setup in `test/appium` folder
-Tests are in `test/specs` folder
+See Appium setup in `test/appium` folder 
+Please set correct version of your iOS simulator (9.3/10.0) in `testConfig.js` `IOS_VERSION` const 
+Tests are in `test/specs` folder 
 
-Appium setup includes actionServer that serves commands from test (like actions and redirects)
-And TestRunner component that is Execute button, when pressing on it app gets commands from server and executes it.
-The main idea of it - to be able to login/logout/redirect between routes to make tests simpler 
+Appium setup includes actionServer that serves commands from test (like actions and redirects). 
+And TestRunner component that is Execute button, when pressing on it app gets commands from server and executes it. 
+The main idea of it - to be able to login/logout/redirect between routes to make tests simpler .
 
 #### Eslint:
 * using `mocha-eslint`

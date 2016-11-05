@@ -14,8 +14,6 @@ if [[ $TRAVIS_BRANCH = master || $TRAVIS_BRANCH =~ ^ready\/.+ ]]; then
 	npm run eslint
 	defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool NO
 	echo "Building native app"
-	export IOS_VERSION="9.3"
-	export DEVICE_NAME="iPhone 6s"
 	$(dirname $0)/./build-tests.sh > /dev/null
 	npm test
 fi

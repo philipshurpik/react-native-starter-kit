@@ -1,5 +1,5 @@
 {
-  "name": "react-native-starter-kit",
+  "name": "ReactNativeStarterKit",
   "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
   "version": "1.0.0",
   "keywords": [
@@ -13,7 +13,11 @@
     "offline-first",
     "offline",
     "persist",
-    "asyncstorage"
+    "asyncstorage",
+    "appium",
+    "mocha",
+    "react-native-mock",
+    "chai"
   ],
   "repository": {
     "type": "git",
@@ -33,12 +37,12 @@
   },
   "dependencies": {
     "react": "^15.3.2",
-    "react-native": "^0.33.0",
+    "react-native": "^0.36.1",
     "react-native-router-flux": "^3.36.0",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
-    "redux-logger": "^2.6.0",
-    "redux-persist": "^3.2.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-persist": "^3.5.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
