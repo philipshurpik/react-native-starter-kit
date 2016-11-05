@@ -15,7 +15,9 @@ describe('integration auth', () => {
 
 			.elementByClassName('UIASecureTextField')
 			.setImmediateValue(CREDENTIALS.password)
-			.hideKeyboard()
+
+			.elementByAccessibilityIdIfExists('LoginButton')
+			.click()
 
 			.waitForElementByAccessibilityId('Dashboard')
 	});
