@@ -18,7 +18,7 @@ export const WEBDRIVER_CAPS = {
 export const APPIUM_PORT = 4723;
 
 export const CREDENTIALS = {
-	email: 'test@gmail.com',
+	username: 'test@gmail.com',
 	password: 'password',
 	token: '32q423423423rdsdsa'
 };
@@ -27,7 +27,7 @@ export const actions = {
 	login: {
 		actions: [{
 			type: 'AUTH_LOGIN_SUCCESS',
-			payload: {token: CREDENTIALS.token}
+			payload: {username: CREDENTIALS.username, token: CREDENTIALS.token}
 		}],
 		redirects: [{name: 'homePage'}]
 	},

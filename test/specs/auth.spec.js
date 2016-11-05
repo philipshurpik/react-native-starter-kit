@@ -11,7 +11,7 @@ describe('integration auth', () => {
 			.waitForElementByAccessibilityId('Login')
 
 			.elementByClassName('UIATextField')
-			.setImmediateValue(CREDENTIALS.email)
+			.setImmediateValue(CREDENTIALS.username)
 
 			.elementByClassName('UIASecureTextField')
 			.setImmediateValue(CREDENTIALS.password)

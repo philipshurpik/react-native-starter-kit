@@ -16,11 +16,13 @@ export default StyleSheet.create({
 		marginBottom: 10,
 		borderColor: 'orange',
 		borderWidth: 1,
-		borderStyle: 'solid'
+		borderStyle: 'solid',
+		borderRadius: 20
 	},
 	label: {
 		color: 'orange',
 		padding: 5,
+		fontSize: 18,
 		fontWeight: "700",
 		fontStyle: 'italic'
 	},
